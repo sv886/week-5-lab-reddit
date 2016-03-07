@@ -14,7 +14,10 @@
           <h1><%= link_to @post.title, @post.url %></h1>
           <h2><%= link_to 'comments', post_path(id: @post.id) %></h2>
         </div>
+          <%= link_to "Add Comment", new_comment_path, class: "btn btn-success" %>
+          <%= link_to "Delete Entry", post_path(id: @post.id), method: :delete, data: {confirm: "Delete entry?"}, class:"btn btn-danger" %>
       </div>
-      </li>
-  </ol>
+
+    <hr/>
+
 </div>

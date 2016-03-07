@@ -23,5 +23,9 @@ class UsersController < ApplicationController
   end
 
   def delete
+    @user = User.find_by id: params[:id]
+    @user.destroy
+    # redirect to "/"
+    redirect_to root_path
   end
 end
