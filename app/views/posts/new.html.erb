@@ -20,8 +20,9 @@
           <%= post.text_field :url, class: "form-control" %>
         </div>
 
-        <%= post.collection_select(:user_id, User.all.order("user_name asc"), :id, :user_name, {prompt: "Who are ya?"}) %>
-
+        <div class="dropdown">
+          <%= post.collection_select(:user_id, User.all.order("user_name asc"), :id, :user_name, {prompt: "Who are ya?"}) %>
+        </div>
 
         <div class="">
           <%= post.submit "Submit Post", class: "btn btn-primary" %>
