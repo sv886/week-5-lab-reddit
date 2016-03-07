@@ -1,2 +1,22 @@
-<h1>Comment#create</h1>
-<p>Find me in app/views/comment/create.html.erb</p>
+<h2>comments</h2>
+
+<%= form_for @comment do |f| %>
+<div class="mdl-textfield mdl-js-textfield <%= 'is-invalid' if @comment.errors[:comment_text].any? %>">
+  <%= f.text_area :body, class: "mdl-textfield__input" %>
+  <% if @comment.errors[:body].any? %>
+    <span class="mdl-textfield__error">* <%= @comment.errors[:body].join(", ") %> </span>
+  <% end %>
+
+  <%= f.label :body, class: "mdl-textfield__label" %>
+</div>
+
+<div>
+  <%= f.submit class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+</div>
+<% end %>
+
+<ul>
+<% @post.comment.order("id desc").each do |comment| %>
+  <li><%= comment.body %> - <%= distance_of_time_in_words comment.created_at, Time.now %> ago</li>
+<% end %>
+</ul>

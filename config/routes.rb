@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post 'posts' => 'posts#create', as: :posts
   get 'posts/edit'
   get 'posts/update'
-  get 'posts/delete'
+  delete 'posts/:id' => 'posts#delete'
+  post 'posts/:id/comments' => 'posts#create_comment', as: :comments
 
   get 'users/list'
   get 'users/new' => 'users#new', as: :new_user
@@ -17,8 +18,8 @@ Rails.application.routes.draw do
   delete 'users/:id' => 'users#delete'
 
   get 'comment/list'
+  get 'comment/new' => 'comment#new', as: :new_comment
   get 'comment/detail'
-  get 'comment/new'
   get 'comment/create'
   get 'comment/delete'
 
