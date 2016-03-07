@@ -1,2 +1,16 @@
-<h1>Posts#detail</h1>
-<p>Find me in app/views/posts/detail.html.erb</p>
+
+<div class="container">
+  <div class="post_detail">
+    <div class="upvote">
+      <%= link_to upvote_post_path(id: @post.id), method: :post, class: 'btn btn-default btn-sm' do %>
+        <i class="glyphicon glyphicon-triangle-top"></i>
+        <div><%= @post.likes %></div>
+      <% end %>
+    </div>
+    <div class="detail">
+      <%= link_to @post.title, @post.url %>
+      <div> (<%= @post.url %>) </div>
+      <%= link_to 'comments', post_path(id: @post.id) %>
+    </div>
+  </div>
+</div>

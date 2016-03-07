@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   root 'posts#list'
-  get 'posts/detail'
   get 'posts/new'
+  get 'posts/:id' => 'posts#detail', as: :post
+  post 'posts/:id/upvote' => 'posts#upvote', as: :upvote_post
   get 'posts/create'
   get 'posts/edit'
   get 'posts/update'

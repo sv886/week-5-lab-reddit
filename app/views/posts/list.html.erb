@@ -1,7 +1,17 @@
-<h1>Reddit</h1>
 
-<% @posts.each do |post| %>
-  <ul>
-    <li><%= post.title %></li>
-  </ul>
-<% end %>
+<div class="root_container">
+  <ol>
+    <% @posts.each do |post| %>
+      <li>
+      <div class="post">
+        <%= link_to upvote_post_path(id: post.id), method: :post, class: 'btn btn-default btn-sm' do %>
+          <i class="glyphicon glyphicon-triangle-top"></i>
+          <div><%= post.likes %></div>
+        <% end %>
+        <%= link_to post.title, post.url %>
+        <%= link_to 'comments', post_path(id: post.id) %>
+      </div>
+      </li>
+    <% end %>
+  </ol>
+</div>
