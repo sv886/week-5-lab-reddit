@@ -6,24 +6,23 @@ class PostsController < ApplicationController
   def detail
     @post = Post.find_by id: params[:id]
 
-    # @comment = Comment.new
-    # @comment.post = @post
+    @comment = Comment.new
+    @comment.post = @post
   end
 
   def create_comment
-    #get record
-    @post = Post.find_by id: params[:id]
-    @comment = Comment.new
+      # get the record
+      @post = Post.find_by id: params[:id]
+      @comment = Comment.new
 
-    @comment.body = params[:comment][:body]
-    @comment.post_id = @post.id
-    @comment.user_id = @user.id
-    # save it
-    if @comment.save
-      redirect_to post_path(id: @post.id)
-    else
-      render :detail
-    end
+      @comment.body = params[:comment][:body]
+      @comment.post_id = @post.id
+      # save it
+      if @comment.save
+        redirect_to post_path(id: @post.id)
+      else
+        render :detail
+      end
   end
 
   def upvote
