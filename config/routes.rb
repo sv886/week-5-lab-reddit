@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'posts/edit'
   get 'posts/update'
   delete 'posts/:id' => 'posts#delete'
-  post 'posts/:id/comments' => 'posts#create_comment', as: :comments
+  post 'posts/:id' => 'posts#create_comment', as: :comments
 
   get 'users/list'
   get 'users/new' => 'users#new', as: :new_user

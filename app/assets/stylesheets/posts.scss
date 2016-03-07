@@ -42,12 +42,11 @@ i {
 
 // details page
 
-.container {
-  display: flex;
   .post_detail {
       display: flex;
       flex-direction: row;
       align-items: center;
+      padding: 10px 10px;
       .votes {
         flex-direction: column;
         .count {
@@ -76,4 +75,3 @@ i {
       }
     }
   }
-}
