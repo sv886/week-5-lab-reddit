@@ -1,5 +1,4 @@
 
-<div class="container">
       <div class="post_detail">
         <div class="votes">
           <%= link_to upvote_post_path(id: @post.id), method: :post, class: 'btn btn-default btn-sm' do %>
@@ -12,12 +11,8 @@
         </div>
         <div class="links">
           <h1><%= link_to @post.title, @post.url %></h1>
-          <h2><%= link_to 'comments', post_path(id: @post.id) %></h2>
-        </div>
-          <%= link_to "Add Comment", new_comment_path, class: "btn btn-success" %>
           <%= link_to "Delete Entry", post_path(id: @post.id), method: :delete, data: {confirm: "Delete entry?"}, class:"btn btn-danger" %>
+          <%= link_to "Add Comment", new_comment_path, class: "btn btn-success" %>
+        </div>
       </div>
-
     <hr/>
-
-</div>
