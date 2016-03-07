@@ -4,12 +4,19 @@
     <% @posts.each do |post| %>
       <li>
       <div class="post">
-        <%= link_to upvote_post_path(id: post.id), method: :post, class: 'btn btn-default btn-sm' do %>
-          <i class="glyphicon glyphicon-triangle-top"></i>
-          <div><%= post.likes %></div>
-        <% end %>
-        <%= link_to post.title, post.url %>
-        <%= link_to 'comments', post_path(id: post.id) %>
+        <div class="votes">
+          <%= link_to upvote_post_path(id: post.id), method: :post, class: 'btn btn-default btn-sm' do %>
+            <i class="glyphicon glyphicon-triangle-top"></i>
+          <% end %>
+          <div class="count"><strong><%= post.likes %></strong></div>
+          <%= link_to downvote_post_path(id: post.id), method: :post, class: 'btn btn-default btn-sm' do %>
+            <i class="glyphicon glyphicon-triangle-bottom"></i>
+          <% end %>
+        </div>
+        <div class="links">
+          <h1><%= link_to post.title, post.url %></h1>
+          <h2><%= link_to 'comments', post_path(id: post.id) %></h2>
+        </div>
       </div>
       </li>
     <% end %>

@@ -1,16 +1,20 @@
 
 <div class="container">
-  <div class="post_detail">
-    <div class="upvote">
-      <%= link_to upvote_post_path(id: @post.id), method: :post, class: 'btn btn-default btn-sm' do %>
-        <i class="glyphicon glyphicon-triangle-top"></i>
-        <div><%= @post.likes %></div>
-      <% end %>
-    </div>
-    <div class="detail">
-      <%= link_to @post.title, @post.url %>
-      <div> (<%= @post.url %>) </div>
-      <%= link_to 'comments', post_path(id: @post.id) %>
-    </div>
-  </div>
+      <div class="post_detail">
+        <div class="votes">
+          <%= link_to upvote_post_path(id: @post.id), method: :post, class: 'btn btn-default btn-sm' do %>
+            <i class="glyphicon glyphicon-triangle-top"></i>
+          <% end %>
+          <div class="count"><strong><%= @post.likes %></strong></div>
+          <%= link_to downvote_post_path(id: @post.id), method: :post, class: 'btn btn-default btn-sm' do %>
+            <i class="glyphicon glyphicon-triangle-bottom"></i>
+          <% end %>
+        </div>
+        <div class="links">
+          <h1><%= link_to @post.title, @post.url %></h1>
+          <h2><%= link_to 'comments', post_path(id: @post.id) %></h2>
+        </div>
+      </div>
+      </li>
+  </ol>
 </div>
