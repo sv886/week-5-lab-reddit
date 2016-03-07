@@ -9,6 +9,10 @@
 <body>
   <div class="icon_home">
     <%= link_to image_tag('https://www.redditstatic.com/about/assets/reddit-logo.png'), root_path %>
+    <div class="left">
+      <h1>New User? <%= link_to "Register Here", new_user_path %></h1>
+      <%= link_to "New Post", new_post_path, class: "btn btn-success" %>
+    </div>
   </div>
 
 <%= yield %>

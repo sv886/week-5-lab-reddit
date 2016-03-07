@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
 
   root 'posts#list'
-  get 'posts/new'
+  get 'posts/new' => 'posts#new', as: :new_post
   get 'posts/:id' => 'posts#detail', as: :post
   post 'posts/:id/upvote' => 'posts#upvote', as: :upvote_post
-  get 'posts/create'
+  post 'posts/:id/downvote' => 'posts#downvote', as: :downvote_post
+  post 'posts' => 'posts#create', as: :posts
   get 'posts/edit'
   get 'posts/update'
   get 'posts/delete'
 
   get 'users/list'
-  get 'users/detail'
-  get 'users/new'
-  get 'users/create'
-  get 'users/delete'
+  get 'users/new' => 'users#new', as: :new_user
+  get 'users/:id' => 'users#detail', as: :user
+  post 'users' => 'users#create'
+  delete 'users/:id' => 'users#delete'
 
   get 'comment/list'
   get 'comment/detail'
