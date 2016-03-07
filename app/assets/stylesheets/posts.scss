@@ -1,3 +1,16 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.root_container {
+  padding: 20px 5px;
+
+}
+
+
+
+// details page
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  .post_detail {
+    flex-direction: row;
+  }
+}

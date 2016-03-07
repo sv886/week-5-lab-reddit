@@ -3,3 +3,12 @@
 @import 'posts';
 @import 'users';
 @import 'comment';
+
+.icon_home {
+  background-color: #CEE3F8;
+  padding: 5px 10px;
+  img {
+    height: 50px;
+    width: 150px;
+  }
+}
