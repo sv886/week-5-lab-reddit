@@ -2,8 +2,8 @@
 
 ##Home
 ###Register, post and vote
-![Alt text](/info/demo.gif?raw=true)
+![Alt text](/info/home.gif?raw=true)
 
 ##Comment
 ###Add comments to posts
-![Alt text](/info/demo.gif?raw=true)
+![Alt text](/info/comment.gif?raw=true)
